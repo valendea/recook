@@ -9,6 +9,19 @@
   </head>
 
   <body>
-    <%= yield %>
+		<div>
+			<%= link_to "Sign Up", new_user_path %>
+			<%= link_to "Log In", new_session_path %>
+		</div>
+
+  	<div class="container">
+	    <div id="flash">
+	    <% flash.each do |key, value| -%>
+	      <div id="flash_<%= key %>"><%=h value %></div>
+	    <% end %>
+	    </div>
+		</div>
+
+		<%= yield %>
   </body>
 </html>
