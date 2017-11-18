@@ -1,7 +1,10 @@
 class User < ApplicationRecord
 	has_secure_password
 
-	# validate_uniqueness_of :email
+	validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :password, presence: true, length: { minimum: 7 }
+  validates :email, presence: true, uniqueness: true, format: { with: (/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i), message: "has registered before"}
 
 	has_many :authentications, dependent: :destroy
 
@@ -11,7 +14,7 @@ class User < ApplicationRecord
       first_name: auth_hash["info"]["first_name"],
       last_name: auth_hash["info"]["last_name"],
       email: auth_hash["info"]["email"],
-      photo: auth_hash["info"]["image"],
+      # photo: auth_hash["info"]["image"],
       password: SecureRandom.hex(10)
     )
     user.authentications << authentication

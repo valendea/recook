@@ -7,6 +7,7 @@ class Authentication < ApplicationRecord
     	uid: auth_hash["uid"],
      	token: auth_hash["credentials"]["token"]
    	)
+
 	end
 
 	def update_token(auth_hash)
