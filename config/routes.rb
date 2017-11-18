@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :sessions
 
-  # root '/'
+  root 'welcome#index'
 end

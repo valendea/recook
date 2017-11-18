@@ -2,7 +2,7 @@
 
 <%= form_for @user do |f| %>
 	<% if @user.errors.any? %>
-		<!-- <h5>Form is invalid</h5> -->
+		<h5>Form is invalid</h5>
 		<ul>
 			<% @user.errors.full_messages.each do |message| %>
 				<li><%= message %></li>
