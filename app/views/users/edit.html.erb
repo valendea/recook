@@ -1,0 +1,21 @@
+<h1>Edit your profile</h1>
+
+	<% if @user.errors.any? %>
+		<h5>Form is invalid</h5>
+		<ul>
+			<% @user.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div>
+	  <%= form_for @user do |form| %>
+
+	  <%= render partial: '/users/form', object: form %>
+
+	  <div class="actions">
+			<%= form.submit "Update Details" %>
+		</div>
+		<% end %>
+	</div>
