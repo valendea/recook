@@ -13,6 +13,9 @@ gem "omniauth-facebook"
 # Authorization and authentication with Google
 gem 'omniauth-google-oauth2'
 
+# Use Figaro to securely configure Rails app
+gem "figaro"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
