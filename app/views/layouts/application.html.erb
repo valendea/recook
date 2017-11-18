@@ -9,21 +9,28 @@
   </head>
 
   <body>
-		<div>
-			<% if logged_in? %>
-				<%= link_to "Log Out", session_path(current_user), method: :delete %>
-			<% else %>
-				<%= link_to "Sign Up", new_user_path %>
-				<%= link_to "Log In", new_session_path %>
-			<% end %>
-		</div>
-
-  	<div class="container">
+		<div class="container">
 	    <div id="flash">
 	    <% flash.each do |key, value| -%>
 	      <div id="flash_<%= key %>"><%=h value %></div>
 	    <% end %>
 	    </div>
+		</div>
+
+		<div>
+			<% if logged_in? %>
+				<%= link_to "Log Out", logout_path %>
+			<% else %>
+				<%= link_to "Sign Up", signup_path %>
+				<%= link_to "Log In", login_path %>
+			<% end %>
+
+			<%# if logged_in? %>
+				<%#= link_to "Log Out", session_path(current_user), method: :delete %>
+			<%# else %>
+				<%#= link_to "Sign Up", new_user_path %>
+				<%#= link_to "Log In", new_session_path %>
+			<%# end %>
 		</div>
 
 		<%= yield %>
