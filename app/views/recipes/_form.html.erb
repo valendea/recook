@@ -1,0 +1,27 @@
+<div class="field">
+	<%= form.label :title %> <br>
+	<%= form.text_field :title %>
+</div>
+
+<div class="field">
+	<%= form.label :description %> <br>
+	<%= form.text_area :description %>
+</div>
+
+<div class="field">
+	<%= form.label :ingredients %> <br>
+	<%= form.text_area :ingredients %>
+</div>
+
+<div class="field">
+	<%= form.label :steps %> <br>
+	<%= form.text_area :steps %>
+</div>
+
+<div class="field">
+	<%= form.label :photos %> <br>
+	<%= form.file_field :photos, multiple: true %>
+</div>
+
+<!--  => ["id", "user_id", "title", "description", "ingredients", "steps", "photos", "created_at", "updated_at"]
+ -->

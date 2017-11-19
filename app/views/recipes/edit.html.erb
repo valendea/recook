@@ -1,0 +1,20 @@
+<h1>Edit Recipe</h1>
+
+<div>
+	<%= form_for @recipe do |form| %>
+		<% if @recipe.errors.any? %>
+			<h5>Form is invalid</h5>
+			<ul>
+				<% @recipe.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			</ul>
+			<% end %>
+		<% end %>
+
+		<%= render partial: '/recipes/form', object: form %>
+
+		<div class="actions">
+			<%= form.submit "Update Recipe" %> | <%= link_to "Back", recipe_path(@recipe.id) %>		
+		</div>
+	<% end %>
+</div>

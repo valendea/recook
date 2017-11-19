@@ -1,2 +1,11 @@
-<img src="http://www.hexatar.com/gallery/thumb/151208_020651_fe104ea6634.png" alt="picture"
+<img src="http://www.hexatar.com/gallery/thumb/151208_020651_fe104ea6634.png" alt="picture">
+<br>
+<br>
+<div>
+	<p>Name: <%= @user.first_name + " " + @user.last_name %><br>
+	Member since <%= @user.created_at.strftime('%d %b %Y') %></p>
+</div>
 
+<%= link_to "Edit my profile", edit_user_path(current_user) %> <br>
+<%= link_to "Create new recipe", new_recipe_path %> <br>
+<%= link_to "See all recipes", recipes_path %> <br>
