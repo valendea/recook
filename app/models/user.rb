@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, format: { with: (/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i), message: "has registered before"}
 
 	has_many :authentications, dependent: :destroy
-	has_many :listings, dependent: :destroy
+	has_many :recipes, dependent: :destroy
 
 	def self.create_with_auth_and_hash(authentication, auth_hash)
     # byebug
