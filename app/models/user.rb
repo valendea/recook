@@ -1,12 +1,13 @@
 class User < ApplicationRecord
 	has_secure_password
 
-	validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :password, presence: true, length: { minimum: 7 }
-  validates :email, presence: true, uniqueness: true, format: { with: (/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i), message: "has registered before"}
+	validates_presence_of :first_name, :last_name, :password, :email
+
+  validates :password, length: { minimum: 7 }
+  validates :email, uniqueness: true, format: { with: (/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i), message: "has registered before"}
 
 	has_many :authentications, dependent: :destroy
+	has_many :listings, dependent: :destroy
 
 	def self.create_with_auth_and_hash(authentication, auth_hash)
     # byebug
