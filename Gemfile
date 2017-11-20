@@ -16,6 +16,18 @@ gem 'omniauth-google-oauth2'
 # Use Figaro to securely configure Rails app
 gem "figaro"
 
+# Using Faker in DBseed
+gem 'faker', git: 'git@github.com:stympy/faker.git' 
+
+gem 'kaminari'
+
+# Use cloudinary and carrierwave for image uploading
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'fog'
+
+gem 'social-share-button'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record

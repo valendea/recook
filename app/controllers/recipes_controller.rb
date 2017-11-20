@@ -3,8 +3,18 @@ class RecipesController < ApplicationController
 
 
 	def index
-		@recipes = Recipe.all
-		# @recipes = current_user.recipes
+		# @recipes = Recipe.all
+		if params[:search]
+      @recipes = Recipe.search(params[:search])
+      if @recipes.nil?
+        flash[:notice] = "There are no posts containing the terms \"#{params[:search]}\""
+        redirect_to recipes_path
+      else
+       @recipes = @recipes.order("created_at DESC").page params[:page]
+     end
+    else
+      @recipes = Recipe.order(:title).page params[:page]
+    end
 	end
 
 	def create
@@ -21,7 +31,7 @@ class RecipesController < ApplicationController
 	end
 
 	def show
-    @recipes = current_user.recipes
+    # @recipes = current_user.recipes
   end
 
 	def edit
