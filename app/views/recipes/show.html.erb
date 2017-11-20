@@ -1,18 +1,20 @@
-<h1><%= @recipe.title %></h1>
-<p><%= @recipe.description %></p>
+<div class="container mt-4">
+	<h1><%= @recipe.title %></h1>
+	<p><%= @recipe.description %></p>
 
-<p>
-	<strong>Ingredients:</strong>
-	<%= @recipe.ingredients %>
-</p>
+	<p>
+		<strong>Ingredients:</strong> <br>
+		<%= @recipe.ingredients %>
+	</p>
 
-<p>
-	<strong>Steps:</strong>
-	<%= @recipe.steps %>
-</p>
+	<p>
+		<strong>Steps:</strong> <br>
+		<%= @recipe.steps %>
+	</p>
 
-<% if current_user == @recipe.user %>
-<%= link_to "Edit recipe", edit_recipe_path(@recipe) %> |
-<%= link_to "Delete", recipe_path, method: :delete, data: { confirm: 'Are you sure?'} %> |
-<%= link_to "Back" ,recipes_path %>
-<% end %>
+	<% if current_user == @recipe.user %>
+	<%= link_to "Edit recipe", edit_recipe_path(@recipe) %> |
+	<%= link_to "Delete", recipe_path, method: :delete, data: { confirm: 'Are you sure?'} %> |
+	<%= link_to "Back" ,recipes_path %>
+	<% end %>
+</div>

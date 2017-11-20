@@ -21,7 +21,7 @@ class RecipesController < ApplicationController
 	end
 
 	def show
-    @recipes = current_user.recipes
+    # @recipes = current_user.recipes
   end
 
 	def edit
