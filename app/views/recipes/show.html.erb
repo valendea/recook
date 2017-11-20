@@ -47,12 +47,12 @@
 
 	<% end %>
 
+	Share this recipe: <%= social_share_button_tag('', :url => "http://recook.herokuapp.com/recipes/"+ @recipe.id.to_s) %>
+
 	<% if current_user == @recipe.user %>
 		<%= link_to "Edit recipe", edit_recipe_path(@recipe) %> |
 		<%= link_to "Delete", recipe_path, method: :delete, data: { confirm: 'Are you sure?'} %> |
 	<% end %>
 	<%= link_to "Back" ,recipes_path %> <br> <br>
 	
-
-Share this recipe: <%= social_share_button_tag('', :url => "http://recook.herokuapp.com/recipes/"+ @recipe.id.to_s) %>
 </div>

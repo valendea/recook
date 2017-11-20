@@ -8,7 +8,7 @@ class RecipesController < ApplicationController
       @recipes = Recipe.search(params[:search])
       if @recipes.nil?
         flash[:notice] = "There are no posts containing the terms \"#{params[:search]}\""
-        redirect_to "/"
+        redirect_to recipes_path
       else
        @recipes = @recipes.order("created_at DESC").page params[:page]
      end

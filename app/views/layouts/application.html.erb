@@ -40,11 +40,12 @@
 	    			  	<%= link_to "Log out", logout_path, class: "nav-link" %>
 	      			</li>
 	    			</ul>
-	  				<form class="form-inline my-2 my-lg-0">
-	  					<div class="nav-link" style="color: #CCCECF;">Signed in as <%= current_user.first_name %></div>
-	    				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	    				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	  				</form>
+	  				<div class="form-inline my-2 my-lg-0">
+	    				<%= form_tag(recipes_path, class: 'form-inline', :method => "get") do %>
+      				<%= text_field_tag :search, params[:search], placeholder: "Search a recipe", class:'form-control mr-sm-2'%>
+     				 <%= submit_tag "Go", class:'btn btn-outline-success my-2 my-sm-0', style:'display: inline;'%>
+     				 <% end %>
+     				</div>
 	  			</div>
 				<% else %>
 	  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -67,10 +68,16 @@
 	        			</div>
 	      			</li>
 	    			</ul>
-	  				<form class="form-inline my-2 my-lg-0">
+	  				<!-- <form class="form-inline my-2 my-lg-0">
 	    				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-	    				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-	  				</form>
+	    				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+						<div class="form-inline my-2 my-lg-0">
+	    				<%= form_tag(recipes_path, class: 'form-inline', :method => "get") do %>
+      				<%= text_field_tag :search, params[:search], placeholder: "Search a recipe", class:'form-control mr-sm-2'%>
+     				 <%= submit_tag "Go", class:'btn btn-outline-success my-2 my-sm-0', style:'display: inline;'%>
+     				</div>
+    <% end %>
+	  				<!-- </form> -->
 	  			</div>
   			<% end %>
 			</nav>
