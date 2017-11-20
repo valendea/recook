@@ -9,6 +9,9 @@ class User < ApplicationRecord
 	has_many :authentications, dependent: :destroy
 	has_many :recipes, dependent: :destroy
 
+	# attr_accessible :avatar
+	# mount_uploader :avatar, AvatarUploader
+
 	def self.create_with_auth_and_hash(authentication, auth_hash)
     # byebug
     user = self.create!(
