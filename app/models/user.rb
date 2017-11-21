@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
 	has_many :authentications, dependent: :destroy
 	has_many :recipes, dependent: :destroy
-	has_many :vote, dependent: :destroy
+	has_many :votes, dependent: :destroy
 
 	# attr_accessible :avatar
 	# mount_uploader :avatar, AvatarUploader

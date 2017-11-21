@@ -1,6 +1,6 @@
 <div class="container mt-4">
-	<h1><%= @recipe.title %></h1>
-	<p><%= @recipe.description %></p>
+	<h3><%= @recipe.title %></h3>
+	<p><%= @recipe.description.gsub("\r\n", "<br>").html_safe %></p>
 
 	<p>
 		<strong>Ingredients:</strong> <br>
@@ -47,8 +47,9 @@
 
 	<% end %>
 	<br>
+	<% if logged_in? && current_user.id != @recipe.user.id %>
 	<div id="poll">
-		<h5>Do you like this recipe?</h5>
+		<h5>Is this recipe helpful?</h5>
 		<form>
 			Yes:
 			<input type="radio" name="vote" value="1" onclick="getVote(this.value, <%= @recipe.id %>)">
@@ -59,6 +60,8 @@
 		</div>
 	</div>
 	<br>
+	<% end %>
+
 	Share this recipe: <%= social_share_button_tag('', :url => "http://recook.herokuapp.com/recipes/"+ @recipe.id.to_s) %>
 	<br>
 	<% if current_user == @recipe.user %>

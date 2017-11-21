@@ -1,27 +1,28 @@
+<div class="pt-2 pl-4 pr-4">
 <div class="field">
 	<%= form.label :title %> <br>
-	<%= form.text_field :title %>
+	<%= form.text_field :title, class:"form-control" %>
 </div>
-
+<br>
 <div class="field">
 	<%= form.label :description %> <br>
-	<%= form.text_area :description %>
+	<%= form.text_area :description, class:"form-control", rows:"3" %>
 </div>
-
+<br>
 <div class="field">
 	<%= form.label :ingredients %> <br>
-	<%= form.text_area :ingredients %>
+	<%= form.text_area :ingredients, class:"form-control", rows:"4" %>
 </div>
-
+<br>
 <div class="field">
 	<%= form.label :steps %> <br>
-	<%= form.text_area :steps %>
+	<%= form.text_area :steps, class:"form-control", rows:"4" %>
 </div>
-
+<br>
 <div class="field">
 	<%= form.label :photos %> <br>
 	<%= form.file_field :photos, multiple: true %>
 </div>
-
+</div>
 <!--  => ["id", "user_id", "title", "description", "ingredients", "steps", "photos", "created_at", "updated_at"]
  -->
