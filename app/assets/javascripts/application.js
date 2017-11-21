@@ -14,3 +14,15 @@
 //= require turbolinks
 //= require social-share-button
 //= require_tree .
+
+function getVote(value, rId) {
+	$.ajax({
+		url: '/vote',
+		method: "GET",
+		data: { value: value, recipeId: rId }
+	}).done(function (data) {
+		console.log(data);
+		$("#display").html(`Result: ${data} people think the same way`)
+		// $("#display").html(`Result: ${data}` + data)
+	})
+}

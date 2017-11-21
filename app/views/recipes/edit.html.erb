@@ -1,4 +1,5 @@
-<h1>Edit Recipe</h1>
+<div class="container mt-4 mb-4">
+<h3>Edit Recipe</h3>
 
 <div>
 	<%= form_for @recipe do |form| %>
@@ -12,9 +13,11 @@
 		<% end %>
 
 		<%= render partial: '/recipes/form', object: form %>
-
+		<br>
 		<div class="actions">
-			<%= form.submit "Update Recipe" %> | <%= link_to "Back", recipe_path(@recipe.id) %>		
+			<%= form.submit "Update Recipe", class:"btn btn-outline-dark" %>
+			<!-- <br><br> -->
+			<%= link_to "Back", recipe_path(@recipe.id), class: "btn btn-outline-secondary" %>		
 		</div>
 	<% end %>
 </div>
