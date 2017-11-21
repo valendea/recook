@@ -6,6 +6,8 @@ class Recipe < ApplicationRecord
 	serialize :photos, Array
 	mount_uploaders :photos, PhotoUploader
 
+	has_many :recipe, dependent: :destroy
+
 	paginates_per 5
 
 	def self.search(search)

@@ -45,6 +45,12 @@ class RecipesController < ApplicationController
 		end
 	end
 
+	def vote
+		# yes = 0
+		# no = 0
+		# if params[:qwe] =+ 1
+	end
+
 	private
 	def set_recipe
 		@recipe = Recipe.find(params[:id])
