@@ -22,8 +22,9 @@ gem 'faker'
 gem 'kaminari'
 
 # Use cloudinary and carrierwave for image uploading
-gem 'carrierwave'
 gem 'cloudinary'
+gem 'carrierwave'
+gem 'mini_magick'
 gem 'fog'
 
 gem 'gmaps4rails'
