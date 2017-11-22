@@ -1,9 +1,0 @@
-development:
-  cloud_name: "apptest000"
-  api_key: "373476678149512"
-  api_secret: "LBiUXL0IRrTIjkg5RxGiuFXU-Qs"
-
-production:
-  cloud_name: "apptest000"
-  api_key: "373476678149512"
-  api_secret: "LBiUXL0IRrTIjkg5RxGiuFXU-Qs"

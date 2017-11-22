@@ -6,15 +6,15 @@ class Recipe < ApplicationRecord
 	serialize :photos, Array
 	mount_uploaders :photos, PhotoUploader
 
-	has_many :recipe, dependent: :destroy
+	# has_many :recipes, dependent: :destroy
 
 	paginates_per 5
 
 	def self.search(search)
     result = []
-    result << where("title LIKE ?", "%#{search}%")
-    result << where("description LIKE ?", "%#{search}%") 
-    result << where("ingredients LIKE ?", "%#{search}%")
+    result << where("title LIKE ?", "%#{search.downcase}%")
+    result << where("description LIKE ?", "%#{search.downcase}%") 
+    result << where("ingredients LIKE ?", "%#{search.downcase}%")
     
     i = 0
     while i < 3
