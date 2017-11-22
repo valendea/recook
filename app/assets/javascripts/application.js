@@ -24,7 +24,7 @@ function getVote(value, rId) {
 		data: { value: value, recipeId: rId }
 	}).done(function (data) {
 		console.log(data);
-		$("#display").html(`Result: ${data} people think the same way`)
+		$("#display").html("Result:" + data + "people think the same way")
 		// $("#display").html(`Result: ${data}` + data)
 	})
 }
