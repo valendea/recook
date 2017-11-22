@@ -17,7 +17,7 @@ gem 'omniauth-google-oauth2'
 gem "figaro"
 
 # Using Faker in DBseed
-gem 'faker', git: 'git@github.com:stympy/faker.git' 
+gem 'faker'
 
 gem 'kaminari'
 
