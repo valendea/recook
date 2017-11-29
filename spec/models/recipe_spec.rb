@@ -15,7 +15,7 @@ RSpec.describe Recipe, type: :model do
 		end
 
 		it 'gives all the recipes instead if the term is not found' do
-			expect(Recipe.search('haha')).to eq nil
+			expect(Recipe.search('haha')).to eq Recipe.all
 		end
 	end
 end

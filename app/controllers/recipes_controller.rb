@@ -31,25 +31,13 @@ class RecipesController < ApplicationController
 	end
 
 	def show
-    # @recipes = current_user.recipes
   end
 
 	def edit
 	end
 
 	def update
-# 	auth ={
-# 		cloud_name: ENV['cloud_name'], 
-# 		api_key: ENV['api_key'],
-# 		api_secret: ENV['api_secret']
-# 	}
-
-
-# Cloudinary::Uploader.upload(params[image, auth)
-
-
 		if @recipe.update(recipe_params)
-
 			redirect_to @recipe, notice: 'Recipe was succesfully updated'
 		else
 			render :edit
@@ -57,9 +45,6 @@ class RecipesController < ApplicationController
 	end
 
 	def vote
-		# yes = 0
-		# no = 0
-		# if params[:qwe] =+ 1
 	end
 
 	private
