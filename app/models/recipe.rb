@@ -12,9 +12,9 @@ class Recipe < ApplicationRecord
 
 	def self.search(search)
     result = []
-    result << where("title LIKE ?", "%#{search.downcase}%")
-    result << where("description LIKE ?", "%#{search.downcase}%") 
-    result << where("ingredients LIKE ?", "%#{search.downcase}%")
+    result << where("title ILIKE ?", "%#{search}%")
+    result << where("description ILIKE ?", "%#{search}%") 
+    result << where("ingredients ILIKE ?", "%#{search}%")
     
     i = 0
     while i < 3
@@ -22,7 +22,6 @@ class Recipe < ApplicationRecord
       i += 1
     end
   end
-
 end
 
 
