@@ -37,6 +37,7 @@ class RecipesController < ApplicationController
 	end
 
 	def update
+		# Cloudinary::Uploader.upload(params[image, auth)
 		if @recipe.update(recipe_params)
 			redirect_to @recipe, notice: 'Recipe was succesfully updated'
 		else
