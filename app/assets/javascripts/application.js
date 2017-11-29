@@ -22,9 +22,10 @@ function getVote(value, rId) {
 		url: '/vote',
 		method: "GET",
 		data: { value: value, recipeId: rId }
-	}).done(function (data) {
+	}).done(function (response) {
+		var data = JSON.parse(response);
 		console.log(data);
-		$("#display").html(`Result: ${data} people think the same way`)
+		$("#display").html("<br> Result: <br> Yes: " + data[0] + "<br> No: " + data[1])
 		// $("#display").html(`Result: ${data}` + data)
 	})
 }

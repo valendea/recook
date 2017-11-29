@@ -16,14 +16,17 @@ class VotesController < ApplicationController
 		# response = Vote.where(value: params[:value] and recipe_id: params[:recipeId]).count
 
 		# User.where(["name = ? and email = ?", "Joe", "joe@example.com"])
-		response = Vote.where(["value = ? and recipe_id = ?", value, vote.recipe_id]).count
+		response = [
+			Vote.where(["value = ? and recipe_id = ?", 1, vote.recipe_id]).count,
+			Vote.where(["value = ? and recipe_id = ?", 0, vote.recipe_id]).count
+		]
 
 		# response = Vote.where({ value: a, recipe_id: vote.recipe_id })
 
 		respond_to do |format|
 			format.js { render json: response.to_json }
 		end
-		
+
 		# respond_to do |format|
 		# 	format.js 
 		# end

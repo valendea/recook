@@ -17,13 +17,13 @@ gem 'omniauth-google-oauth2'
 gem "figaro"
 
 # Using Faker in DBseed
-gem 'faker', git: 'git@github.com:stympy/faker.git' 
+gem 'faker'
 
 gem 'kaminari'
 
 # Use cloudinary and carrierwave for image uploading
-gem 'carrierwave'
 gem 'cloudinary'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 
