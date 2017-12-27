@@ -48,18 +48,18 @@
 	<% end %>
 	<br>
 	<% if logged_in? && current_user.id != @recipe.user.id %>
-	<div id="poll">
-		<h5>Is this recipe helpful?</h5>
-		<form>
-			Yes:
-			<input type="radio" name="vote" value="1" onclick="getVote(this.value, <%= @recipe.id %>)">
-			<br>No:
-			<input type="radio" name="vote" value="0" onclick="getVote(this.value, <%= @recipe.id %>)">
-		</form>
-		<div id="display">
+		<div id="poll">
+			<h5>Is this recipe helpful?</h5>
+			<form>
+				Yes:
+				<input type="radio" name="vote" value="1" onclick="getVote(this.value, <%= @recipe.id %>)">
+				<br>No:
+				<input type="radio" name="vote" value="0" onclick="getVote(this.value, <%= @recipe.id %>)">
+			</form>
+			<div id="display">
+			</div>
 		</div>
-	</div>
-	<br>
+		<br>
 	<% end %>
 
 	Share this recipe: <%= social_share_button_tag('', :url => "http://recook.herokuapp.com/recipes/"+ @recipe.id.to_s) %>
