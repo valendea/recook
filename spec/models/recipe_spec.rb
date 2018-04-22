@@ -19,3 +19,24 @@ RSpec.describe Recipe, type: :model do
 		end
 	end
 end
+
+# describe 'Guess The Gifts' do
+#   def check(wishlist, presents, expected)
+#     Test.assert_equals(guess_gifts(wishlist, presents).sort, expected.sort, 'Given wishlist ' + wishlist.to_s + ' and presents ' + presents.to_s);
+#   end
+  
+#   it 'Description Example' do
+#     check(
+#       [
+#         {:name => "mini puzzle", :size => "small", :clatters => "yes", :weight => "light"},
+#         {:name => "toy car", :size => "medium", :clatters => "a bit", :weight => "medium"},
+#         {:name => "card game", :size => "small", :clatters => "no", :weight => "light"}
+#       ],
+#       [
+#         {:size => "medium", :clatters => "a bit", :weight => "medium"},
+#         {:size => "small", :clatters => "yes", :weight => "light"}
+#       ],
+#       ['toy car', 'mini puzzle']
+#     );
+#   end
+# end
