@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'devise'
+
 # Use OmniAuth for Facebook Login
 gem "omniauth"
 gem "omniauth-facebook"
