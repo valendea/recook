@@ -63,8 +63,10 @@
 	          		Log In
 	        			</a>
 	        			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          			<%= link_to "Log in with Facebook", "/auth/facebook", class: "dropdown-item" %>
-	          			<%= link_to "Log in with Google", "/auth/google_oauth2", class: "dropdown-item" %>
+	          			<%#= link_to "Log in with Facebook", "/auth/facebook", class: "dropdown-item" %>
+	          			<%= link_to "Log in with Facebook", "/", class: "dropdown-item disabled" %>
+	          			<%#= link_to "Log in with Google", "/auth/google_oauth2", class: "dropdown-item" %>
+	          			<%= link_to "Log in with Google", "/", class: "dropdown-item disabled" %>
 	          			<div class="dropdown-divider"></div>
 	          				<%= link_to "More login option", login_path, class: "dropdown-item" %>
 	        			</div>
