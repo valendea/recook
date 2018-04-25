@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   devise_group :person, contains: [:user]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   # private
   # def current_user
